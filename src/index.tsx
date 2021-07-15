@@ -36,14 +36,7 @@ const useCustomIntl = (locale, blurbs) => {
   return intl;
 };
 
-export type useCopyTunerProps = {
-  locale: string;
-  blurbs: { [key: string]: string };
-  url?: string;
-};
-
-export const useCopyTuner = (props: useCopyTunerProps) => {
-  const { locale, blurbs, url } = props;
+export const useCopyTuner = (locale: string, blurbs: { [key: string]: string }, url?: string) => {
   const intl = useCustomIntl(locale, blurbs);
 
   useEffect(() => {
