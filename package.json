@@ -1,0 +1,19 @@
+{
+  "name": "@sonicgarden/copy-tuner-firebase-react-intl",
+  "version": "1.0.0",
+  "description": "CopyTuner Client for React Intl on Firebase",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SonicGarden/copy-tuner-firebase-react-intl.git"
+  },
+  "author": "Masato Hirokami <hiroro@sonicgarden.jp>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SonicGarden/copy-tuner-firebase-react-intl/issues"
+  },
+  "homepage": "https://github.com/SonicGarden/copy-tuner-firebase-react-intl#readme"
+}
