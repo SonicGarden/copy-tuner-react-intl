@@ -16,6 +16,10 @@
     "url": "https://github.com/SonicGarden/copy-tuner-firebase-react-intl/issues"
   },
   "homepage": "https://github.com/SonicGarden/copy-tuner-firebase-react-intl#readme",
+  "peerDependencies": {
+    "react": "^16.8.0  || ^17.0.0",
+    "react-dom": "^16.8.0  || ^17.0.0"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
