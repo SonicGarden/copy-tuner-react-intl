@@ -41,8 +41,10 @@ export const useCopyTuner = (locale: string, blurbs: { [key: string]: string }, 
 
   useEffect(() => {
     const startCopyRay = async () => {
-      const { start } = url && (await import("./lib/main"));
-      start && start(url);
+      if (!url) return;
+
+      const { start } = await import("./lib/main");
+      start(url);
     };
 
     startCopyRay();
