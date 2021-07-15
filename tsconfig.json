@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "resolveJsonModule": true,
-    "sourceMap": true,
-    "jsx": "react"
+    "sourceMap": true
   },
   "extends": "./tsconfig.release.json",
   "include": ["**/*.ts", "**/*.tsx"]
