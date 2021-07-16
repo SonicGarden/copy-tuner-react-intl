@@ -3,7 +3,7 @@ import ReactDOMServer from "react-dom/server";
 import { createIntl, createIntlCache, IntlShape, MessageDescriptor } from "react-intl";
 import { PrimitiveType, FormatXMLElementFn, Options } from "intl-messageformat";
 
-const useCustomIntl = (locale, blurbs) => {
+const useCustomIntl = ({ locale, blurbs }) => {
   const [intl, setIntl] = useState<IntlShape>();
 
   useEffect(() => {
@@ -36,8 +36,14 @@ const useCustomIntl = (locale, blurbs) => {
   return intl;
 };
 
-export const useCopyTuner = (locale: string, blurbs: { [key: string]: string }, url?: string) => {
-  const intl = useCustomIntl(locale, blurbs);
+export type useCopyTunerOptions = {
+  locale: string;
+  blurbs: { [key: string]: string };
+  url?: string;
+};
+
+export const useCopyTuner = ({ locale, blurbs, url }: useCopyTunerOptions) => {
+  const intl = useCustomIntl({ locale, blurbs });
 
   useEffect(() => {
     const startCopyRay = async () => {
