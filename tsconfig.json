@@ -4,5 +4,6 @@
     "sourceMap": true
   },
   "extends": "./tsconfig.release.json",
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["lib"]
 }
