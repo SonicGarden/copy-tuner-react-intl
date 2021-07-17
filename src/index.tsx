@@ -7,6 +7,8 @@ const useCustomIntl = ({ locale, blurbs }) => {
   const [intl, setIntl] = useState<IntlShape>();
 
   useEffect(() => {
+    if (!blurbs) return;
+
     const cache = createIntlCache();
     const intlOriginal = createIntl({ locale, messages: blurbs }, cache);
     const { formatMessage: formatMessageOriginal } = intlOriginal;
