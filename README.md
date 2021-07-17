@@ -10,7 +10,13 @@ yarn add @sonicgarden/copy-tuner-react-intl
 
 # Usage
 
-In YourComponent.jsx
+Import the css file
+
+```
+import '@sonicgarden/copy-tuner-react-intl/css/copyray.css';
+```
+
+In YourComponent.jsx:
 
 ```
 import { RawIntlProvider, FormattedMessage } from 'react-intl';
@@ -31,49 +37,47 @@ export const YourComponent = () => {
 };
 ```
 
-# Example. With @sonicgarden/copy-tuner-firebase-functions
+- Example. With @sonicgarden/copy-tuner-firebase-functions
 
-In YourComponent.jsx
+    ```
+    import { useEffect, useState } from 'react';
+    import { RawIntlProvider, FormattedMessage } from 'react-intl';
+    import { useCopyTuner } from '@sonicgarden/copy-tuner-react-intl';
 
-```
-import { useEffect, useState } from 'react';
-import { RawIntlProvider, FormattedMessage } from 'react-intl';
-import { useCopyTuner } from '@sonicgarden/copy-tuner-react-intl';
+    const fetchCopyTunerBlurbs = firebase.functions().httpsCallable('fetchCopyTunerBlurbs');
+    const getCopyTunerUrl = firebase.functions().httpsCallable('getCopyTunerUrl');
 
-const fetchCopyTunerBlurbs = firebase.functions().httpsCallable('fetchCopyTunerBlurbs');
-const getCopyTunerUrl = firebase.functions().httpsCallable('getCopyTunerUrl');
-
-export const YourComponent = ({ locale }) => {
-  const [url, setUrl] = useState();
-  const [blurbs, setBlurbs] = useState();
-  const { intl } = useCopyTuner({ locale, blurbs, url });
-  
-  useEffect(() => {
-    const fetchUrl = async () => {
-      const { data } = await getCopyTunerUrl();
-      setUrl(data.url);
+    export const YourComponent = ({ locale }) => {
+      const [url, setUrl] = useState();
+      const [blurbs, setBlurbs] = useState();
+      const { intl } = useCopyTuner({ locale, blurbs, url });
+      
+      useEffect(() => {
+        const fetchUrl = async () => {
+          const { data } = await getCopyTunerUrl();
+          setUrl(data.url);
+        };
+        
+        fetchUrl();
+      }, []);
+      
+      useEffect(() => {
+        const fetchBlurbs = async () => {
+          const { data } = await fetchCopyTunerBlurbs({ locale });
+          setBlurbs(data.blurbs);
+        };
+        
+        fetchBlurbs();
+      }, [locale]);
+      
+      return (
+        <>
+          {intl && (
+            <RawIntlProvier value={intl}>
+              <FormattedMessage id="hoge" />
+            </RawIntlProvider>)
+          }
+        </>
+      );
     };
-    
-    fetchUrl();
-  }, []);
-  
-  useEffect(() => {
-    const fetchBlurbs = async () => {
-      const { data } = await fetchCopyTunerBlurbs({ locale });
-      setBlurbs(data.blurbs);
-    };
-    
-    fetchBlurbs();
-  }, [locale]);
-  
-  return (
-    <>
-      {intl && (
-        <RawIntlProvier value={intl}>
-          <FormattedMessage id="hoge" />
-        </RawIntlProvider>)
-      }
-    </>
-  );
-};
-```
+    ```
