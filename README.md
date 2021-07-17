@@ -16,7 +16,7 @@ Import the css file
 import '@sonicgarden/copy-tuner-react-intl/css/copyray.css';
 ```
 
-In YourComponent.jsx:
+Add useCopyTuner in YourComponent.jsx
 
 ```
 import { RawIntlProvider, FormattedMessage } from 'react-intl';
