@@ -25,7 +25,9 @@ const useCustomIntl = ({ locale, blurbs }) => {
         <span
           dangerouslySetInnerHTML={{
             __html: `<!--COPYRAY ${id}-->${nodes
-              .map((node) => (typeof node === "object" ? ReactDOMServer.renderToString(node) : node))
+              .map((node) =>
+                typeof node === "object" ? ReactDOMServer.renderToString(node) : node
+              )
               .join("")}`,
           }}
         />
