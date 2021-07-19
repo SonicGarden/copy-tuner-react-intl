@@ -1,0 +1,48 @@
+{
+  "name": "@sonicgarden/copy-tuner-react-intl",
+  "version": "1.0.0",
+  "description": "CopyTuner Client for React Intl",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "css"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.release.json",
+    "build:release": "npm install --production && npm install --no-save typescript && tsc -p tsconfig.release.json",
+    "build:pack": "rm -rf lib && npm install && tsc -p tsconfig.release.json && npm pack",
+    "test": "jest",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SonicGarden/copy-tuner-firebase-react-intl.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SonicGarden/copy-tuner-firebase-react-intl/issues"
+  },
+  "homepage": "https://github.com/SonicGarden/copy-tuner-firebase-react-intl#readme",
+  "peerDependencies": {
+    "react": "^16.8.0  || ^17.0.0",
+    "react-dom": "^16.8.0  || ^17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.24.0",
+    "intl-messageformat": "^9.7.1",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "keycode-js": "^3.1.0",
+    "react-intl": "^5.20.4"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "stripInternal": true,
+    "target": "esnext",
+    "typeRoots": ["./node_modules/@types"],
+    "allowJs": true,
+    "jsx": "react",
+    "esModuleInterop": true
+  },
+  "files": ["./src/index.tsx"]
+}
