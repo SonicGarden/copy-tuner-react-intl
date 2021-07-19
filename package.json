@@ -19,7 +19,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/SonicGarden/copy-tuner-firebase-react-intl.git"
   },
-  "author": "Masato Hirokami <hiroro@sonicgarden.jp>",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SonicGarden/copy-tuner-firebase-react-intl/issues"
