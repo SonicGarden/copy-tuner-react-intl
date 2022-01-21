@@ -67,7 +67,7 @@ export const getStorageCachePath = ({
   environment,
   locale,
 }: {
-  environment: "production" | "staging" | "development";
+  environment: "production" | "staging" | "development" | (string & {});
   locale: string;
 }) => {
   return environment === "production"
