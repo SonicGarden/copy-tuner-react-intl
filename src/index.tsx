@@ -62,3 +62,15 @@ export const useCopyTuner = ({ locale, blurbs, url }: useCopyTunerOptions) => {
 
   return { intl };
 };
+
+export const getStorageCachePath = ({
+  environment,
+  locale,
+}: {
+  environment: "production" | "staging" | "development" | (string & {});
+  locale: string;
+}) => {
+  return environment === "production"
+    ? `copy-tuner/publish/${locale}`
+    : `copy-tuner/draft/${locale}`;
+};
