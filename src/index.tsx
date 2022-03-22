@@ -40,13 +40,13 @@ const useCustomIntl = ({ locale, blurbs }) => {
   return intl;
 };
 
-export type useCopyTunerOptions = {
+export type UseCopyTunerOptions = {
   locale: string;
   blurbs: { [key: string]: string };
   url?: string;
 };
 
-export const useCopyTuner = ({ locale, blurbs, url }: useCopyTunerOptions) => {
+export const useCopyTuner = ({ locale, blurbs, url }: UseCopyTunerOptions) => {
   const intl = useCustomIntl({ locale, blurbs });
 
   useEffect(() => {
