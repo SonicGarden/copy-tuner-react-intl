@@ -42,7 +42,7 @@ const useCustomIntl = ({ locale, blurbs }) => {
 
 export type UseCopyTunerOptions = {
   locale: string;
-  blurbs: { [key: string]: string };
+  blurbs?: { [key: string]: string };
   url?: string;
 };
 
